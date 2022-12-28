@@ -1,0 +1,99 @@
+
+.heater-Nav{
+    height: 250px;
+    background-color: #f1ca8e;
+    margin:10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home:hover{
+    font-size: 40px;
+}
+.product:hover{
+    font-size: 40px;
+}
+.buy:hover{
+    font-size: 40px;
+}
+.heat-nav-wrap{
+    display: flex;
+    align-items: center;
+}
+.heaterImg{
+    width: 200px;
+    border-radius: 50%;
+}
+.heater-Nav ul{
+    list-style: none;
+    margin: 0;
+}
+.heater-Nav a{
+    text-decoration: none;
+    margin-left: 20px;
+}
+.heater-Nav li{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 30px;
+}
+.Nav-Item-right{
+    font-size: 30px;
+    margin-right: 40px;
+}
+.imgBody1 {
+    /*width: 600px;*/
+    width: 80%;
+    height: auto;
+    padding: 20px 20px;
+    text-align: center;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-right: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #c08507
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #fac53f;
+}
+.profile:hover {
+    background-color: #fac53f;
+    font-size: 25px;
+}
+.login:hover {
+    background-color: #fac53f;
+    font-size: 25px;
+}
+.register:hover {
+    background-color: #fac53f;
+    font-size: 25px;
+}
+.sizeImg{
+width: 100px;
+}
+
