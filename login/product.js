@@ -19,6 +19,7 @@ function creatTable() {
     } else {
         let newProduct = new Product(id, productName, img, price);
         arr.push(newProduct)
+        localStorage.removeItem("list_Product",)
         localStorage.setItem("list_Product",JSON.stringify(arr))
         drawTable(arr)
         clearData()
@@ -40,6 +41,8 @@ function deleteComment(id) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].id === id) {
             arr.splice(i, 1);
+            localStorage.removeItem("list_Product",)
+            localStorage.setItem("list_Product",JSON.stringify(arr))
             drawTable(arr)
         }
     }
@@ -76,6 +79,7 @@ function update() {
     arr[test].name = document.getElementById("product").value;
     arr[test].img = document.getElementById("img").value;
     arr[test].price = document.getElementById("price").value;
+    localStorage.removeItem("list_Product",)
     localStorage.setItem("list_Product",JSON.stringify(arr))
     drawTable(arr)
     document.getElementById("btn").style.display = "inline-block";
