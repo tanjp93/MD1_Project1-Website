@@ -4,7 +4,9 @@ if (arr == null) {
 }
 let tableExpand;
 let id = 0;
-
+let arr_localStorage=localStorage.getItem("list_Product");
+let arr_display=JSON.parse(arr_localStorage);
+window.onload=drawTable(arr_display)
 function creatTable() {
     let productName = document.getElementById("product").value;
     let img = document.getElementById("img").value;
@@ -26,10 +28,11 @@ function creatTable() {
     }
 }
 
-let test;
+
+let edit;
 
 function editData(id) {
-    test = id
+    edit = id
     document.getElementById("product").value = arr[id].name;
     document.getElementById("img").value = arr[id].img;
     document.getElementById("price").value = arr[id].price;
@@ -76,9 +79,9 @@ function clearData() {
 }
 
 function update() {
-    arr[test].name = document.getElementById("product").value;
-    arr[test].img = document.getElementById("img").value;
-    arr[test].price = document.getElementById("price").value;
+    arr[edit].name = document.getElementById("product").value;
+    arr[edit].img = document.getElementById("img").value;
+    arr[edit].price = document.getElementById("price").value;
     localStorage.removeItem("list_Product",)
     localStorage.setItem("list_Product",JSON.stringify(arr))
     drawTable(arr)
