@@ -71,7 +71,6 @@ function drawTable(arr) {
     }
     document.getElementById("creatTable").innerHTML = tableExpand;
 }
-
 function clearData() {
     document.getElementById("product").value = ""
     document.getElementById("img").value = ""

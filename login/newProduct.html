@@ -19,15 +19,12 @@
             scale: 100%;
             min-height: 600px;
         }
-        .table{
+
+        .table {
             font-size: 20px;
             width: 100%;
             background-color: #f6f1e9;
             text-align: center;
-
-        }
-        .show {
-            display: block !important;
         }
     </style>
 
@@ -39,10 +36,15 @@
         <div class="heat-nav-wrap">
             <a><img class="heaterImg"
                     src="https://firebasestorage.googleapis.com/v0/b/anhtanjp-24746.appspot.com/o/images%2FCapture.PNG?alt=media&token=f1fc1cbe-ebcd-417f-aa84-e879638c39ae"/></a>
-            <ul>
-                <li><a class="Nav-Item-left home" href="../index.html">Trang Chủ</a></li>
-                <li><a class="Nav-Item-left product" href="newProduct.html">Sản Phẩm</a></li>
-                <li><a class="Nav-Item-left buy" href="">Giỏ Hàng</a></li>
+            <ul id="navItem">
+                <li class="navItem"><a class="Nav-Item-left home" href="../index.html"><i class="bi bi-house-fill"></i>
+                    Trang Chủ</a></li>
+
+                <li class="navItem"><a class="Nav-Item-left buy" href="">Giỏ Hàng</a></li>
+                <li class="navItem"><a class="Nav-Item-left buy">Tìm kiếm  </i><input id="searchItem" oninput="searchProduct()"
+                                                                                      placeholder="Tìm kiếm sản phẩm .......">
+                    <i class="bi bi-search"></i></a></li>
+                <li class="navItem"><a class="Nav-Item-left product" href="newProduct.html">Sản Phẩm</a></li>
             </ul>
         </div>
         <div class="dropdown">
@@ -55,25 +57,41 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="main-body">
+        <div class="imgBody1">
+            <img id="banner"
+                 src="https://firebasestorage.googleapis.com/v0/b/anhtanjp-24746.appspot.com/o/images%2FhoanglanShop.jpg?alt=media&token=cf36cf7f-e7bc-4cbf-8a33-3fdccfd959c1"/>
+        </div>
+    </div>
+</div>
 <div class="tableDiv">
-    <div style="display: flex;padding: 20px;flex-direction: column; border: 1px solid #1adaa0; max-width: 1000px; margin-right: auto;margin-left: auto; background-color: #1adaa0; border-radius: 15px ">
+    <div class="container-div">
         <div class="mx-5">
-            <h5 class="d-flex justify-content-between"><span>Tên Sản Phẩm :</span><input id="product" class="inputItem" placeholder="New Product .....">
+            <h5 class="d-flex justify-content-between"><span>Tên Sản Phẩm :</span><input id="product" class="inputItem"
+                                                                                         placeholder="New Product .....">
             </h5>
         </div>
         <div class="mx-5">
-            <h5 class="d-flex justify-content-between"><span>Hình Ảnh :</span> <input id="img" class="inputItem" placeholder="Product's Image ....."></h5>
+            <h5 class="d-flex justify-content-between"><span>Hình Ảnh :</span> <input id="img" class="inputItem"
+                                                                                      placeholder="Product's Image .....">
+            </h5>
         </div>
         <div class="mx-5">
-            <h5 class="d-flex justify-content-between"><span> Giá :</span><input id="price" placeholder="Price ......" class="inputItem"></h5>
+            <h5 class="d-flex justify-content-between"><span> Giá :</span><input id="price" placeholder="Price ......"
+                                                                                 class="inputItem"></h5>
         </div>
         <div class="text-center">
-            <button id="btn" style="width: 150px;border-radius: 5px; background-color: #f1ca8e; display: inline-block" onclick="creatTable()"> Thêm sản phẩm </button>
-            <button id="btn1" style="width: 150px;border-radius: 5px; background-color: #f1ca8e; display: none" onclick="update()"> Thay đổi </button>
+            <button id="btn" style="width: 150px;border-radius: 5px; background-color: #f1ca8e; display: inline-block"
+                    onclick="creatTable()"> Thêm sản phẩm
+            </button>
+            <button id="btn1" style="width: 150px;border-radius: 5px; background-color: #f1ca8e; display: none"
+                    onclick="update()"> Thay đổi
+            </button>
         </div>
     </div>
 
-    <div >
+    <div>
         <table class="table">
             <thead>
             <tr>
@@ -90,72 +108,45 @@
             </tbody>
         </table>
     </div>
-
 </div>
-
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <h3><img class="footer-logo"
-                 src="https://firebasestorage.googleapis.com/v0/b/anhtanjp-24746.appspot.com/o/images%2FCapture.PNG?alt=media&token=f1fc1cbe-ebcd-417f-aa84-e879638c39ae"/>
-        </h3>
-
-        <p class="footer-links">
-            <a href="#" class="link-1">Trang chủ</a>
-
-            <a href="#">Blog</a>
-
-            <a href="#">Sản phẩm</a>
-
-            <a href="#">Về chúng tôi</a>
-
-            <a href="#">Liên hệ đặt hàng</a>
-        </p>
-
-        <p class="footer-company-name">Hoàng Lan © 2015</p>
+<footer id="footer">
+    <div class="block-leftHand">
+        <img id="logo"
+             src="https://firebasestorage.googleapis.com/v0/b/anhtanjp-24746.appspot.com/o/images%2FCapture.PNG?alt=media&token=f1fc1cbe-ebcd-417f-aa84-e879638c39ae"/>
+        <div id="block-left-content">
+            <p>
+                <a href="#" class="link-1">Trang chủ</a>
+                <a href="#">Blog</a>
+                <a href="#">Sản phẩm</a>
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Liên hệ đặt hàng</a>
+            </p>
+            <p>Hoàng Lan © 2015</p>
+        </div>
     </div>
-
-    <div class="footer-center">
-
+    <div class="block-center">
         <div>
-            <i class="fa fa-map-marker"></i>
+            <i></i>
             <p><span>Khu1 Thị Trấn Quán Lào ,</span> Yên Định Thanh Hóa</p>
         </div>
-
         <div>
-            <i class="fa fa-phone"></i>
+            <i></i>
             <p>+84.964720855</p>
         </div>
-
         <div>
-            <i class="fa fa-envelope"></i>
+            <i></i>
             <p><a href="mailto:buitan561993@.com">hoanglanshop@gmail.com</a></p>
         </div>
-
     </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
+    <div class="block block-right">
+        <p>
             <span>Giới thiệu về Shop</span>
             Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
             vehicula sit amet.
         </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
     </div>
 
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

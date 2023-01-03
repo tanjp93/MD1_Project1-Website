@@ -1,25 +1,42 @@
 let localArr = localStorage.getItem("list_Product");
 let localData = JSON.parse(localArr)
-window.onload = drawNewProduct(localData)
+// function searchProduct() {
+//     let inputSearch=document.getElementById("searchItem").value;
+//     console.log(inputSearch)
+// else{
+//         let listSearch=[];
+//         for (let i = 0; i < localData.length; i++) {
+//             if (localData[i].name.toLowerCase().search(inputSearch.toLowerCase())!==-1){
+//                 listSearch.push(localData[i])
+//             }
+//         }
+//         drawTable(listSearch)
+//         console.log(listSearch)
+//     }
+// }
+//
 
+window.onload = drawNewProduct(localData)
 function drawNewProduct(arr) {
-    let count = Math.ceil(arr.length / 4)
-    let addProduct="";
+    let count=Math.ceil(arr.length / 4)
+    let drawTable = "<table> <tr>";
+    // console.log(count);
     for (let i = 0; i < count; i++) {
         for (let j = 1; j < 5; j++) {
-             addProduct = "<div class=\"col\" id=\"No${i * 4 + j - 1}\">";
-            if (i * 4 + j <= arr.length) {
-                addProduct +=`
-            <img src="${localData[i * 4 + j - 1].img}"alt="Snow" style="width:100%">
-            <span class="content"> ${localData[i * 4 + j - 1].name}</span>
-            <span class="contentPrice"> ${localData[i * 4 + j - 1].price}</span>
-            <button id="buyItem3" class="btn">Mua ngay</button>
-          `
-                console.log(addProduct)
-            }
-            else break
+            if (i * 4 + j <= arr.length){
+                drawTable += `<td class="tableTd">
+                                <div class="divDisplay">
+                                    <img src="${arr[i * 4 + j - 1].img} " class="imgDisplay">
+                                     <span class="nameContent"> ${arr[i * 4 + j - 1].name}</span>
+                                    <span class="priceContent">${arr[i * 4 + j - 1].price}</span>
+                                    <button class="buttonBuy">Mua</button>
+                                    </img>
+                                </div>
+                                  
+                            </td>`
+            }else  break
         }
-        addProduct += "</div>"
+        drawTable += "</tr>"
     }
-    document.getElementById("productList").innerHTML = addProduct;
+    document.getElementById("show-product-here").innerHTML = drawTable;
 }
